@@ -96,12 +96,9 @@ export const ResponsiveAppBar = () => {
             variant="h2"
             noWrap
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            color={colorsDataset.blue01}
           >
-            <NavItem
-              href={"/"}
-              title={"ABC"}
-              color={colorsDataset.blue01}
-            />
+            ABC
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page, key) => (
@@ -111,10 +108,7 @@ export const ResponsiveAppBar = () => {
                 sx={{ marginLeft: "16px !important" }}
                 key={key}
               >
-                <NavItem
-                  href={page.href}
-                  title={page.title}
-                />
+                <NavItem href={page.href} title={page.title} />
               </Typography>
             ))}
           </Box>

@@ -1,6 +1,7 @@
 import React from "react";
 import { colorsDataset } from "../../globalStyle/globalStyle";
 import Typography from "@mui/material/Typography";
+import { TotalAvatarsGroup } from "./TotalAvatarsGroup";
 
 const containerStyle = {
   height: "auto",
@@ -15,11 +16,12 @@ const descriptionStyle = {
     marginBottom: 2
   } as const;
 
-export const TeamDescription = () => {
+export const TeamDescription = ({ page }: { page: number }) => {
   return (
     <div style={containerStyle}>
+      <TotalAvatarsGroup page={page}/>
       <Typography variant="h3" noWrap sx={descriptionStyle}>
-        Team's description
+        Our values
       </Typography>
       <div style={{textAlign: "center"}}>
         At first, Stallman viewed these notices with alarm. Rare was the

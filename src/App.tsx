@@ -8,6 +8,7 @@ import { ResponsiveAppBar } from './sections/Header/ResponsiveAppBar';
 export const App = () => {
   // TODO
   // tests jests
+  // Pb de close sur le burger Menu
   // Clean code
   // Linter
   // 404/405 status error
