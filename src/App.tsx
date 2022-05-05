@@ -13,6 +13,7 @@ export const App = () => {
   // Linter
   // 404/405 status error
   // Route Home sur le nom de l'entreprise
+  // Filtres en url
 
   return (
     <div className="App">

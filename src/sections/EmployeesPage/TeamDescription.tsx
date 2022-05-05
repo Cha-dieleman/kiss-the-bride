@@ -16,10 +16,10 @@ const descriptionStyle = {
     marginBottom: 2
   } as const;
 
-export const TeamDescription = ({ page }: { page: number }) => {
+export const TeamDescription = ({ page, checked }: { page: number, checked: boolean }) => {
   return (
     <div style={containerStyle}>
-      <TotalAvatarsGroup page={page}/>
+      <TotalAvatarsGroup page={page} checked={checked}/>
       <Typography variant="h3" noWrap sx={descriptionStyle}>
         Our values
       </Typography>

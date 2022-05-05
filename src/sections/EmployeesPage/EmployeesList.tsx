@@ -18,8 +18,8 @@ const employeeStyle = {
   marginBottom: 24,
 } as const;
 
-export const EmployeesList = ({ page }: { page: number }) => {
-  const { data } = useGetEmployees(page);
+export const EmployeesList = ({ page, checked }: { page: number, checked: boolean }) => {
+  const { data } = useGetEmployees(page, checked);
   const [employees, setEmployees] = useState<any>(undefined);
 
   useEffect(() => {

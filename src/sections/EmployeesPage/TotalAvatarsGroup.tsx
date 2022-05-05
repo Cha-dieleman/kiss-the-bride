@@ -3,8 +3,8 @@ import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import { useGetEmployees } from "../../queries/useGetEmployees";
 
-export const TotalAvatarsGroup = ({ page }: { page: number }) => {
-  const { data } = useGetEmployees(page);
+export const TotalAvatarsGroup = ({ page, checked }: { page: number, checked: boolean }) => {
+  const { data } = useGetEmployees(page, checked);
   const [employees, setEmployees] = useState<any>(undefined);
 
   useEffect(() => {

@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { EmployeesLoader } from "../../loaders/EmployeesLoader";
 import { AppPagination } from "./AppPagination";
 import { EmployeesList } from "./EmployeesList";
+import { NationalitySwitch } from "./NationalitySwitch";
 import { TeamDescription } from "./TeamDescription";
 
 const employeesStyle = {
@@ -15,6 +16,7 @@ export const EmployeesPage = () => {
   const [page, setPage] = useState<number>(
     Number(pageParams) < 1 || Number(pageParams) > 5 ? 1 : Number(pageParams)
   );
+  const [checked, setChecked] = React.useState(false);
 
   useEffect(() => {
     document.title = "Our Bubbly team";
@@ -31,11 +33,12 @@ export const EmployeesPage = () => {
 
   return (
     <>
-      <TeamDescription page={page}/>
-      <EmployeesLoader>
+      <TeamDescription page={page} checked={checked}/>
+      <EmployeesLoader page={page} checked={checked}>
         <div style={employeesStyle}>
-          <EmployeesList page={page} />
-          <AppPagination page={page} />
+          <NationalitySwitch checked={checked} setChecked={setChecked}/>
+          <EmployeesList page={page} checked={checked} />
+          <AppPagination page={page} checked={checked} />
         </div>
       </EmployeesLoader>
     </>

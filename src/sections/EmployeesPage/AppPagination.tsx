@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 
 interface AppPaginationProps {
     page: number;
+    checked: boolean;
 }
 
 export const AppPagination = ({
-    page
+    page,
+    checked
 } : AppPaginationProps) => {
     const navigate = useNavigate();
 
