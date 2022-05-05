@@ -15,7 +15,6 @@ const StyledLink = styled(
 
 interface NavItemProps {
   href: string;
-  id: string;
   title: string;
   color?: string;
 }
@@ -23,13 +22,11 @@ interface NavItemProps {
 export const NavItem = ({
   color = colorsDataset.black01,
   href,
-  id,
   title,
 }: NavItemProps) => {
   return (
     <StyledLink
       to={href}
-      id={id}
       sx={{ color: color, fontWeight: 700, margin: "8px !important" }}
     >
       {title}

@@ -63,7 +63,7 @@ export const ResponsiveAppBar = () => {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
             >
-              <MenuIcon sx={{ color: colorsDataset.blue01}} />
+              <MenuIcon sx={{ color: colorsDataset.blue01 }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -82,12 +82,13 @@ export const ResponsiveAppBar = () => {
               sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page, key) => (
-                <NavItem
-                  href={page.href}
-                  id={key.toString()}
-                  title={page.title}
-                  color={colorsDataset.black01}
-                />
+                <div key={key}>
+                  <NavItem
+                    href={page.href}
+                    title={page.title}
+                    color={colorsDataset.black01}
+                  />
+                </div>
               ))}
             </Menu>
           </Box>
@@ -97,7 +98,6 @@ export const ResponsiveAppBar = () => {
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
             <NavItem
-              id={"ABC"}
               href={"/"}
               title={"ABC"}
               color={colorsDataset.blue01}
@@ -109,10 +109,10 @@ export const ResponsiveAppBar = () => {
                 variant="h4"
                 noWrap
                 sx={{ marginLeft: "16px !important" }}
+                key={key}
               >
                 <NavItem
                   href={page.href}
-                  id={key.toString()}
                   title={page.title}
                 />
               </Typography>
